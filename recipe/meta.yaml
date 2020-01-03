@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - pytest
   run:
-    - python
+    - python >=3.6
     - graphene >=2.1,<3
     - jinja2 >=2.10.1
     - six >=1.10.0
