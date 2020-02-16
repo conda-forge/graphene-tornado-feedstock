@@ -1,5 +1,5 @@
 {% set name = "graphene-tornado" %}
-{% set version = "2.6.0" %}
+{% set version = "2.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b00874814146f3802666e1bf4dd587a1098264888a89571408da19092930af81
+  sha256: 953bf812267177224ce1ac2a93c669069d85a8fa187a9fac681b76b63dffebc2
 
 build:
   noarch: python
