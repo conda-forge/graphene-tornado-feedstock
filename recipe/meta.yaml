@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 953bf812267177224ce1ac2a93c669069d85a8fa187a9fac681b76b63dffebc2
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - pytest
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - graphene >=2.1,<3
     - jinja2 >=2.10.1
     - six >=1.10.0
@@ -28,6 +28,8 @@ requirements:
     - werkzeug ==0.12.2
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - graphene_tornado
 
